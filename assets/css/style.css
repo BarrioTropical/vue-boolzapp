@@ -1,0 +1,16 @@
+/* Common */
+:root{
+    --green: #009688;
+    --lightgrey: #DADBD5;
+}
+
+/* General */
+body{
+    height: 100vh;
+    background-color: var(--lightgrey);
+}
+
+header{
+    background-color: var(--green);
+    height: 80px;
+}
