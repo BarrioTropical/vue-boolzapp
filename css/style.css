@@ -1,0 +1,119 @@
+/* Generals */
+:root{
+    --active: rgba(233, 235, 235, 1);
+    --icons: rgba(107, 115, 118, 1);
+    --greybar: rgba(234, 234, 234, 1);
+    --lightblue: rgba(142, 218, 252, 1);
+    --lighticons: rgba(177, 177, 177, 1);
+    --sent: rgba(213, 249, 186, 1);
+}
+
+.icon {
+    color: var(--icons);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.icon:hover{
+    color: #CDC1C5;
+}
+
+.icon-blue{
+    color: lightblue;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    border-radius: 0.25rem;
+}
+
+/* Main Container */
+#app{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(210,219,220,1) 0%, rgba(221,219,210,1) 85%, rgba(0,149,135,1) 85%, rgba(0,149,136,1) 100%);
+
+}
+
+#app > .container{
+    height: 90%;
+}
+
+.border-lightgrey{
+    border: 1px solid grey;
+}
+
+/* Left Section */
+.contact-bar,
+.user-tools, 
+.header-left,
+.header-right{
+    background-color: var(--greybar);
+    height: 70px;
+}
+
+/* Notificacion Section */
+.notification-wrapper{
+    background-color: var(--lightblue);
+    height: 70px;
+}
+
+/* Search Section */
+.searchbar{
+    height: 50px;
+}
+
+/* Conversation Container */
+.contacts-wrapper{
+    height: calc(100% - 200px);
+    overflow: hidden;
+}
+
+
+/* Right Container */
+.contacts,
+.chat{
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* Chat Section */
+.message-wrapper{
+    height: calc(100% - 140px);
+    background: url(../img/mine.jpg);
+    overflow: hidden;
+}
+
+.message{
+    position: relative;
+    min-width: 40%;
+    max-width: 60%;
+    font-size: 15px;
+    margin: 5px 0px;
+    padding: 15px 15px 20px;
+    background: white;
+    border-radius: 10px;
+}
+
+.chat{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.message.sent{
+    background-color: var(--sent);
+    align-self: flex-end;
+}
