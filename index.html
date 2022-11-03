@@ -70,7 +70,8 @@
                         <div class="contacts">
                             <div class="contact">
                                 <ul>
-                                    <li v-for="(contact, index) in contacts"> 
+                                    <!-- METHODS JAVASCRIPT "getAvatar", print array -->
+                                    <li v-for="(contact, index) in contacts" @click="setCurrentContact(index)"> 
                                         <img class="avatars-img" :src="getAvatar(contact)" alt="Avatar"/>
                                     {{ contact.name }}
                                     </li>
@@ -89,8 +90,9 @@
                     <div class="header-left d-flex">
                         <!-- Contact user section -->
                             <div class="contact-bar flex-grow-1">
-                            <img src="./img/avatar_io.jpg" alt="">
-                            <span class="fw-bold">Simona</span>
+                                <!-- METHODS JAVASCRIPT "setCurrentContact" -->
+                                <img class="avatars-img" :src="`img/avatar${contacts[currentChat].avatar}.jpg`" alt=""/>
+                            <span class="fw-bold">{{contacts[currentChat].name}}</span>
                             </div>
                         <!-- Contact user tools -->    
                             <div class="icon">
@@ -102,12 +104,12 @@
 
                     <!-- Chat Section -->
                     <div class="message-wrapper">
-                        <div class="chat">
+                        <div class="chat" :class="message.status" v-for="message in contacts[currentChat].messages">
                             <div class="message">
-                               messaggio ricevuto
+                                {{message.text}} 
                             </div>
                             <div class="message sent">
-                                messaggio inviato
+                                
                             </div>
                         </div>
                     </div>

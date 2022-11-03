@@ -1,15 +1,14 @@
 "use strict"
 
 //array messaggi
-  
-
-
 const { createApp } = Vue;
 
 createApp({
     data() {
         return{
             currentChat: 0,
+            inputMessage: '',    
+            filterContact: '', 
             contacts: [
                 {
                 name: 'Michele',
@@ -176,8 +175,12 @@ createApp({
         }
     },
     methods: {
+        //Funzione per far le immagini dell'array con ciclo v-for
         getAvatar (contact){
             return `img/avatar${contact.avatar}.jpg`;
+        },
+        setCurrentContact(index) {
+            this.currentChat = index;
         },
     },
     computed: {

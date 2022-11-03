@@ -39,6 +39,7 @@ ul{
 
 li{
     line-height: 50px;
+    cursor: pointer;
 }
 
 /* Main Container */
