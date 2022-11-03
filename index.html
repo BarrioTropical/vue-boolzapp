@@ -73,7 +73,9 @@
                                     <!-- METHODS JAVASCRIPT "getAvatar", print array -->
                                     <li v-for="(contact, index) in contacts" @click="setCurrentContact(index)"> 
                                         <img class="avatars-img" :src="getAvatar(contact)" alt="Avatar"/>
-                                    {{ contact.name }}
+                                        <span class="fw-bold">{{ contact.name }}</span>
+                                        <span> {{ contact.messages[contact.messages.length - 1].date }}</span>
+
                                     </li>
                                 </ul>
                             </div>
@@ -92,7 +94,8 @@
                             <div class="contact-bar flex-grow-1">
                                 <!-- METHODS JAVASCRIPT "setCurrentContact" -->
                                 <img class="avatars-img" :src="`img/avatar${contacts[currentChat].avatar}.jpg`" alt=""/>
-                            <span class="fw-bold">{{contacts[currentChat].name}}</span>
+                                <span><strong>{{contacts[currentChat].name}}</strong><br/>
+                                Ultimo accesso: {{contacts[currentChat].messages[contacts[currentChat].messages.length - 1].date }}</span>
                             </div>
                         <!-- Contact user tools -->    
                             <div class="icon">
@@ -104,12 +107,9 @@
 
                     <!-- Chat Section -->
                     <div class="message-wrapper">
-                        <div class="chat" :class="message.status" v-for="message in contacts[currentChat].messages">
-                            <div class="message">
-                                {{message.text}} 
-                            </div>
-                            <div class="message sent">
-                                
+                        <div class="chat"  >
+                            <div class="message" :class="message.status" v-for="(message, index) in contacts[currentChat].messages" .key="index">
+                                {{message.message}} 
                             </div>
                         </div>
                     </div>
