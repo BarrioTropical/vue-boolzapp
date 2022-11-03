@@ -7,7 +7,7 @@ createApp({
     data() {
         return{
             currentChat: 0,
-            inputMessage: '',    
+            newmessage: '',    
             filterContact: '', 
             contacts: [
                 {
@@ -175,12 +175,39 @@ createApp({
         }
     },
     methods: {
-        //Funzione per far le immagini dell'array con ciclo v-for
+        //metodo per far le immagini dell'array con ciclo v-for
         getAvatar (contact){
             return `img/avatar${contact.avatar}.jpg`;
         },
+        //metodo per far comparire la chat relativa all'avatar
         setCurrentContact(index) {
             this.currentChat = index;
+        },
+        //metodo invio messaggio
+        sendMessage() {
+            const d = new Date();
+            let newdate = d.toDateString();
+            const newmSentMessage ={
+                date: newdate,
+                message : this.newmessage,
+                status : 'sent'
+
+            }
+            this.contacts[this.currentChat].messages.push(newmSentMessage);
+            //pulisce il form
+            this.newmessage = '';    
+            //metodo risposta automatica
+        setTimeout(()=>{
+            const d = new Date();
+            let newdate = d.toDateString();
+            const newmSentMessage ={
+                date: newdate,
+                message : 'ok',
+                status : 'received'
+
+            }
+            this.contacts[this.currentChat].messages.push(newmSentMessage);
+        }, 1000);                         
         },
     },
     computed: {

@@ -118,7 +118,8 @@
                     <div class="contact-bar d-flex justify-content-between icon">
                         <a href="#"><i class="far fa-smile ms-4 py-3 icon"></i></a>
                         <div class="input-message py-3">
-                            <input type="text" placeholder="Scrivi un messaggio" class="border-0" style="width:700px"/>
+                            <input type="text" placeholder="Scrivi un messaggio" class="border-0" style="width:700px" v-model="newmessage"
+                            @keyup.enter="sendMessage"/>
                         </div>
                         <a href="#"><i class="fas fa-paper-plane py-3 icon"></i></a>
                         <a href="#"><i class="fas fa-microphone py-3 me-4 icon"></i></a>
