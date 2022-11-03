@@ -16,6 +16,7 @@
     <title>Boolzaap</title>
 </head>
 <body>
+
     <div id="app" class="d-flex  justify-content-center align-items-center">
         <div class="container">
             <div class="row h-100 g-0">
@@ -65,21 +66,13 @@
                     </div>
 
                     <!-- Conversations container -->
-                    <div class="contacts-wrapper mt-3">
+                    <div class="contacts-wrapper">
                         <div class="contacts">
                             <div class="contact">
                                 <ul>
-                                    <li>
-                                        <img src="./img/avatar_1.jpg" alt="">
-                                        <span>Fabio</span>
-                                    </li>
-                                    <li>
-                                        <img src="./img/avatar_2.jpg" alt="">
-                                        <span>Fabio</span>
-                                    </li>
-                                    <li>
-                                        <img src="./img/avatar_3.jpg" alt="">
-                                        <span>Fabio</span>
+                                    <li v-for="(contact, index) in contacts"> 
+                                        <img class="avatars-img" :src="getAvatar(contact)" alt="Avatar"/>
+                                    {{ contact.name }}
                                     </li>
                                 </ul>
                             </div>

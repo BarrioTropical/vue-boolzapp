@@ -1,6 +1,9 @@
 "use strict"
 
 //array messaggi
+  
+
+
 const { createApp } = Vue;
 
 createApp({
@@ -172,10 +175,12 @@ createApp({
             ]
         }
     },
-    computed: {
-
-    },
     methods: {
+        getAvatar (contact){
+            return `img/avatar${contact.avatar}.jpg`;
+        },
+    },
+    computed: {
 
     },
     mounted(){
