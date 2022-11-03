@@ -19,7 +19,7 @@
 }
 
 .icon-blue{
-    color: lightblue;
+    color: blue;
     cursor: pointer;
     font-size: 18px;
 }
@@ -35,7 +35,10 @@ ul{
     flex-direction: column;
     padding-left: 0;
     margin-bottom: 0;
-    border-radius: 0.25rem;
+}
+
+li{
+    line-height: 50px;
 }
 
 /* Main Container */
@@ -63,6 +66,7 @@ ul{
     height: 70px;
 }
 
+
 /* Notificacion Section */
 .notification-wrapper{
     background-color: var(--lightblue);
@@ -78,6 +82,7 @@ ul{
 .contacts-wrapper{
     height: calc(100% - 200px);
     overflow: hidden;
+    background-color: white;
 }
 
 
