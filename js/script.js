@@ -209,9 +209,21 @@ createApp({
             this.contacts[this.currentChat].messages.push(newmSentMessage);
         }, 1000);                         
         },
-    },
+        //filtro
+        findContact(){
+            this.contacts = this.contacts.filter((item)=>{
+                const name = item.name.toLowerCase();
+               return item.name.includes(this.filterContact.toLowerCase()) 
+            })
+        }
+    },  
     computed: {
-
+        filteredContact(){
+            return  this.contacts.filter((item)=>{
+                const name = item.name.toLowerCase();
+               return item.name.includes(this.filterContact.toLowerCase()) 
+            })
+        }
     },
     mounted(){
 

@@ -62,7 +62,8 @@
                     <!-- Search section -->
                     <div class="searchbar d-flex bg-light">
                         <a href="#"><i class="fas fa-search mx-3 my-2 icon"></i></a>
-                        <input type="text" class="input-group border-0" placeholder="Cerca o inizia una nuova chat" />
+                        <!-- Funzione filtro-->
+                        <input type="text" class="input-group border-0" placeholder="Cerca o inizia una nuova chat" v-model.trim="filterContact" @keyup="findContact"/>
                     </div>
 
                     <!-- Conversations container -->
