@@ -122,8 +122,8 @@
                             <input type="text" placeholder="Scrivi un messaggio" class="border-0" style="width:700px" v-model="newmessage"
                             @keyup.enter="sendMessage"/>
                         </div>
-                        <a href="#"><i class="fas fa-paper-plane py-3 icon"></i></a>
-                        <a href="#"><i class="fas fa-microphone py-3 me-4 icon"></i></a>
+                        <a href="#"><i class="fas fa-paper-plane py-3 icon" @click="sendMessage"></i></a>
+                        <a href="#"><i class="fas fa-microphone py-3 me-4 icon" @click="sendMessage"></i></a>
                     </div>
 
                 </div>

@@ -203,8 +203,7 @@ createApp({
             const newmSentMessage ={
                 date: newdate,
                 message : 'ok',
-                status : 'received'
-
+                status : 'received',
             }
             this.contacts[this.currentChat].messages.push(newmSentMessage);
         }, 1000);                         
@@ -215,7 +214,7 @@ createApp({
                 const name = item.name.toLowerCase();
                return item.name.includes(this.filterContact.toLowerCase()) 
             })
-        }
+        },
     },  
     computed: {
         filteredContact(){
